@@ -27,7 +27,7 @@ const JobRequirementForm = () => {
       };
 
       // Basic matching
-      const res = await axios.post('http://localhost:5000/api/match', payload);
+      const res = await axios.post('https://candidate-shortlist-backend-9yvd.onrender.com/api/match', payload);
       const candidates = res.data;
       setShortlisted(candidates);
       setLoading(false);
@@ -36,7 +36,7 @@ const JobRequirementForm = () => {
       if (candidates.length > 0) {
         setAiLoading(true);
         try {
-          const aiRes = await axios.post('http://localhost:5000/api/ai/shortlist', {
+          const aiRes = await axios.post('https://candidate-shortlist-backend-9yvd.onrender.com/api/ai/shortlist', {
             requiredSkills: skillsArray,
             minExperience: payload.minExperience,
             candidates: candidates.slice(0, 5) // Send top 5 to AI

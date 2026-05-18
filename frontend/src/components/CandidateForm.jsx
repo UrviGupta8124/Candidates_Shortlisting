@@ -22,7 +22,7 @@ const CandidateForm = () => {
         experience: Number(formData.experience)
       };
       
-      await axios.post('http://localhost:5000/api/candidates', payload);
+      await axios.post('https://candidate-shortlist-backend-9yvd.onrender.com/api/candidates', payload);
       setStatus('success');
       setFormData({ name: '', email: '', skills: '', experience: '' });
       setTimeout(() => setStatus(null), 3000);

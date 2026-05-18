@@ -21,7 +21,7 @@ const CandidateList = () => {
   const fetchCandidates = async (isBackground = false) => {
     if (!isBackground) setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/candidates');
+      const res = await axios.get('https://candidate-shortlist-backend-9yvd.onrender.com/api/candidates');
       cachedCandidates = res.data;
       setCandidates(res.data);
     } catch (error) {
